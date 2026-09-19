@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body { display: flex; height: 100vh; justify-content: center; align-items: center;
+            font-family: Arial, sans-serif; background: #f5f5f5; }
+        .card { background: white; padding: 32px; border-radius: 10px; text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        img { border-radius: 50%; width: 80px; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <img th:src="${picture}" alt="profile">
+    <h2>Welcome, <span th:text="${name}"></span></h2>
+    <p th:text="${email}"></p>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+</div>
+</body>
+</html>
